@@ -3,38 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Virtual - Produtos Afiliados</title>
-    <link rel="stylesheet" href="style.css">
+    <title>HardSpartan - Loja Virtual</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #d32f2f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header .logo h1 {
+            color: white;
+            font-size: 2rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .hero {
+            background-color: #212121;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: #ff1744;
+        }
+
+        .hero p {
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .descricao-loja {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .descricao-loja h3 {
+            color: #ff1744;
+            font-size: 2rem;
+        }
+
+        .descricao-loja p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .categoria {
+            padding: 20px;
+            background-color: #333;
+            margin-bottom: 20px;
+        }
+
+        .categoria h2 {
+            font-size: 1.8rem;
+            color: #ff1744;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .produtos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .produto {
+            background-color: #424242;
+            padding: 15px;
+            width: 250px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .produto img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .produto h3 {
+            color: #ff1744;
+            margin-top: 10px;
+        }
+
+        .produto p {
+            color: #ccc;
+            margin-top: 5px;
+        }
+
+        .produto a {
+            display: inline-block;
+            background-color: #d32f2f;
+            color: white;
+            padding: 10px;
+            margin-top: 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .produto a:hover {
+            background-color: #c2185b;
+        }
+
+        footer {
+            background-color: #212121;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ff1744;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bem-vindo à Minha Loja Virtual</h1>
+        <div class="logo">
+            <h1>HardSpartan</h1>
+        </div>
         <nav>
             <ul>
-                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#moda">MODA</a></li>
+                <li><a href="#items">ITEMS</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="produtos">
-        <h2>Produtos Recomendados</h2>
-        <div class="produto">
-            <img src="https://via.placeholder.com/200" alt="Produto 1">
-            <h3>Produto 1</h3>
-            <p>Descrição do Produto 1</p>
-            <a href="https://linkdoafiliado.com/produto1" target="_blank">Comprar Agora</a>
+    <section class="hero">
+        <h2>Bem-vindo à HardSpartan!</h2>
+        <p>Escolha sua categoria e descubra produtos incríveis para melhorar sua autoestima e saúde física.</p>
+    </section>
+
+    <section class="descricao-loja">
+        <h3>Do Melhor, Para os Melhores!</h3>
+        <p>Eae campeões! Aqui na HardSpartan, acreditamos que o que você escolhe usar pode impactar diretamente seu bem-estar e desempenho. Oferecemos produtos de qualidade que vão te ajudar, seja para dar aquele upgrade no visual, ou para melhorar seu desempenho físico no dia a dia. São itens selecionados com muito cuidado para garantir o melhor para você, seja na sua rotina de treino ou no seu estilo pessoal. Afinal, você merece o melhor! Vamos juntos nessa jornada de evolução!</p>
+    </section>
+
+    <section id="moda" class="categoria">
+        <h2>MODA</h2>
+        <div class="produtos">
+            <div class="produto">
+                <img src="https://via.placeholder.com/200" alt="Produto Moda 1">
+                <h3>Produto 1</h3>
+                <p>Descrição do Produto 1</p>
+                <a href="https://linkdaamazon.com/produto1" target="_blank">Comprar Agora</a>
+            </div>
+            <div class="produto">
+                <img src="https://via.placeholder.com/200" alt="Produto Moda 2">
+                <h3>Produto 2</h3>
+                <p>Descrição do Produto 2</p>
+                <a href="https://linkdaamazon.com/produto2" target="_blank">Comprar Agora</a>
+            </div>
         </div>
-        <div class="produto">
-            <img src="https://via.placeholder.com/200" alt="Produto 2">
-            <h3>Produto 2</h3>
-            <p>Descrição do Produto 2</p>
-            <a href="https://linkdoafiliado.com/produto2" target="_blank">Comprar Agora</a>
+    </section>
+
+    <section id="items" class="categoria">
+        <h2>ITEMS</h2>
+        <div class="produtos">
+            <div class="produto">
+                <img src="https://via.placeholder.com/200" alt="Produto Item 1">
+                <h3>Produto 1</h3>
+                <p>Descrição do Produto 1</p>
+                <a href="https://linkdaamazon.com/produto1" target="_blank">Comprar Agora</a>
+            </div>
+            <div class="produto">
+                <img src="https://via.placeholder.com/200" alt="Produto Item 2">
+                <h3>Produto 2</h3>
+                <p>Descrição do Produto 2</p>
+                <a href="https://linkdaamazon.com/produto2" target="_blank">Comprar Agora</a>
+            </div>
         </div>
     </section>
 
     <footer id="contato">
-        <p>Entre em contato: <a href="mailto:contato@meusite.com">contato@meusite.com</a></p>
+        <p>Entre em contato: <a href="mailto:hardspartan7@gmail.com">hardspartan7@gmail.com</a></p>
     </footer>
 </body>
 </html>
