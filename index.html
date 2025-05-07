@@ -15,12 +15,17 @@
       font-family: Arial, sans-serif;
       background-color: #1a1a1a;
       color: #fff;
-      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     header {
       background-color: #d32f2f;
-      padding: 20px;
+      padding: 20px 0;
       text-align: center;
       animation: fadeInDown 1s ease-out;
     }
@@ -32,7 +37,7 @@
 
     nav ul {
       list-style-type: none;
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
     nav ul li {
@@ -70,7 +75,7 @@
 
     .descricao-loja {
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       background-color: #333;
       animation: fadeIn 2s ease;
     }
@@ -88,7 +93,7 @@
     }
 
     .categoria {
-      padding: 30px 20px;
+      padding: 40px 0;
       background-color: #2b2b2b;
       animation: fadeInUp 1.5s ease;
     }
@@ -100,13 +105,18 @@
       margin-bottom: 20px;
     }
 
-    .carrossel {
-      position: relative;
+    .carrossel-container {
       overflow-x: auto;
       display: flex;
-      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
       gap: 20px;
-      padding-bottom: 10px;
+      padding: 10px 0;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .carrossel-container::-webkit-scrollbar {
+      display: none; /* oculta barra no Chrome */
     }
 
     .produto {
@@ -116,6 +126,7 @@
       padding: 15px;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
+      scroll-snap-align: start;
       flex-shrink: 0;
     }
 
@@ -154,31 +165,6 @@
       background-color: #c2185b;
     }
 
-    .seta {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(255, 23, 68, 0.7);
-      border: none;
-      padding: 10px;
-      color: #fff;
-      font-size: 20px;
-      cursor: pointer;
-      z-index: 1;
-    }
-
-    .seta:hover {
-      background-color: rgba(255, 23, 68, 1);
-    }
-
-    .esquerda {
-      left: 0;
-    }
-
-    .direita {
-      right: 0;
-    }
-
     footer {
       background-color: #212121;
       text-align: center;
@@ -207,6 +193,20 @@
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    @media screen and (max-width: 768px) {
+      .produto {
+        min-width: 80%;
+      }
+
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+
+      .descricao-loja p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -224,61 +224,69 @@
   </header>
 
   <section class="hero">
-    <h2>Bem-vindo à HardSpartan!</h2>
-    <p>Escolha sua categoria e descubra produtos incríveis para melhorar sua autoestima e saúde física.</p>
+    <div class="container">
+      <h2>Bem-vindo à HardSpartan!</h2>
+      <p>Escolha sua categoria e descubra produtos incríveis para melhorar sua autoestima e saúde física.</p>
+    </div>
   </section>
 
   <section class="descricao-loja">
-    <h3>Do Melhor, Para os Melhores!</h3>
-    <p>Eae campeões! Aqui na HardSpartan, acreditamos que o que você escolhe usar pode impactar diretamente seu bem-estar e desempenho. Oferecemos produtos de qualidade que vão te ajudar, seja para dar aquele upgrade no visual, ou para melhorar seu desempenho físico no dia a dia. São itens selecionados com muito cuidado para garantir o melhor para você, seja na sua rotina de treino ou no seu estilo pessoal. Afinal, você merece o melhor! Vamos juntos nessa jornada de evolução!</p>
+    <div class="container">
+      <h3>Do Melhor, Para os Melhores!</h3>
+      <p>Eae campeões! Aqui na HardSpartan, acreditamos que o que você escolhe usar pode impactar diretamente seu bem-estar e desempenho. Oferecemos produtos de qualidade que vão te ajudar, seja para dar aquele upgrade no visual, ou para melhorar seu desempenho físico no dia a dia. São itens selecionados com muito cuidado para garantir o melhor para você, seja na sua rotina de treino ou no seu estilo pessoal. Afinal, você merece o melhor! Vamos juntos nessa jornada de evolução!</p>
+    </div>
   </section>
 
   <!-- Categoria MODA -->
   <section id="moda" class="categoria">
-    <h2>MODA</h2>
-    <div class="carrossel" id="carrossel-moda">
-      <div class="produto">
-        <img src="https://via.placeholder.com/200" alt="Moda 1">
-        <h3>Camisa Dry Fit</h3>
-        <p>Ideal para treinos pesados com conforto.</p>
-        <a href="#">Comprar</a>
-      </div>
-      <div class="produto">
-        <img src="https://via.placeholder.com/200" alt="Moda 2">
-        <h3>Boné Spartan</h3>
-        <p>Estilo urbano com atitude.</p>
-        <a href="#">Comprar</a>
-      </div>
-      <div class="produto">
-        <img src="https://via.placeholder.com/200" alt="Moda 3">
-        <h3>Bermuda Performance</h3>
-        <p>Resistência e mobilidade.</p>
-        <a href="#">Comprar</a>
+    <div class="container">
+      <h2>MODA</h2>
+      <div class="carrossel-container">
+        <div class="produto">
+          <img src="https://via.placeholder.com/200" alt="Moda 1">
+          <h3>Camisa Dry Fit</h3>
+          <p>Ideal para treinos pesados com conforto.</p>
+          <a href="#">Comprar</a>
+        </div>
+        <div class="produto">
+          <img src="https://via.placeholder.com/200" alt="Moda 2">
+          <h3>Boné Spartan</h3>
+          <p>Estilo urbano com atitude.</p>
+          <a href="#">Comprar</a>
+        </div>
+        <div class="produto">
+          <img src="https://via.placeholder.com/200" alt="Moda 3">
+          <h3>Bermuda Performance</h3>
+          <p>Resistência e mobilidade.</p>
+          <a href="#">Comprar</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Categoria ITEMS -->
   <section id="items" class="categoria">
-    <h2>ITEMS</h2>
-    <div class="carrossel" id="carrossel-items">
-      <div class="produto">
-        <img src="https://via.placeholder.com/200" alt="Item 1">
-        <h3>Kit Faixa Elástica</h3>
-        <p>Treine em casa com eficiência.</p>
-        <a href="#">Comprar</a>
-      </div>
-      <div class="produto">
-        <img src="https://via.placeholder.com/200" alt="Item 2">
-        <h3>Shaker Pro</h3>
-        <p>Prepare seu suplemento com estilo.</p>
-        <a href="#">Comprar</a>
-      </div>
-      <div class="produto">
-        <img src="https://via.placeholder.com/200" alt="Item 3">
-        <h3>Luvas de Treino</h3>
-        <p>Proteção e aderência no treino.</p>
-        <a href="#">Comprar</a>
+    <div class="container">
+      <h2>ITEMS</h2>
+      <div class="carrossel-container">
+        <div class="produto">
+          <img src="https://via.placeholder.com/200" alt="Item 1">
+          <h3>Kit Faixa Elástica</h3>
+          <p>Treine em casa com eficiência.</p>
+          <a href="#">Comprar</a>
+        </div>
+        <div class="produto">
+          <img src="https://via.placeholder.com/200" alt="Item 2">
+          <h3>Shaker Pro</h3>
+          <p>Prepare seu suplemento com estilo.</p>
+          <a href="#">Comprar</a>
+        </div>
+        <div class="produto">
+          <img src="https://via.placeholder.com/200" alt="Item 3">
+          <h3>Luvas de Treino</h3>
+          <p>Proteção e aderência no treino.</p>
+          <a href="#">Comprar</a>
+        </div>
       </div>
     </div>
   </section>
