@@ -129,6 +129,8 @@
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
+      justify-content: center;
+      position: relative;
     }
 
     .carrossel-container::-webkit-scrollbar {
@@ -209,6 +211,28 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Estilos para as setas */
+    .flechas {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    .flecha {
+      background-color: rgba(255, 255, 255, 0.5);
+      color: #333;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      pointer-events: all;
+      border-radius: 50%;
+    }
+
+    /* Estilo responsivo */
     @media screen and (max-width: 768px) {
       .produto {
         min-width: 80%;
@@ -310,29 +334,17 @@
         <a href="https://s.shopee.com.br/7pgZToFEKi" target="_blank">Comprar</a>
       </div>
       <div class="produto">
-        <img src="https://raw.githubusercontent.com/hardspartan7/homepage/main/creatinaalien.png" alt="Creatina Abduzido" style="height: 250px; object-fit: cover;">
-        <h3>Creatina Abduzido</h3>
-        <p>Suplemento Alimentar.</p>
-        <a href="https://s.shopee.com.br/5pvV6AUpt5" target="_blank">Comprar</a>
-      </div>
-      <div class="produto">
-        <img src="https://raw.githubusercontent.com/hardspartan7/homepage/main/amendoim.png" alt="Pasta de Amendoim Integral" style="height: 250px; object-fit: cover;">
-        <h3>Pasta de Amendoim Integral</h3>
-        <p>100% Natural.</p>
-        <a href="https://s.shopee.com.br/LaYY5kZ9c" target="_blank">Comprar</a>
-      </div>
-      <div class="produto">
-        <img src="https://raw.githubusercontent.com/hardspartan7/homepage/main/canivete.png" alt="Canivete Lanterna" style="height: 250px; object-fit: cover;">
-        <h3>Canivete Lanterna</h3>
-        <p>Canivete Afiado com Lanterna acoplado.</p>
-        <a href="https://s.shopee.com.br/9UonSxT0B6" target="_blank">Comprar</a>
+        <img src="https://raw.githubusercontent.com/hardspartan7/homepage/main/musculacao.png" alt="Kit Musculação" style="height: 250px; object-fit: cover;">
+        <h3>Kit Musculação</h3>
+        <p>Kit com Halteres e Faixas Elásticas.</p>
+        <a href="https://s.shopee.com.br/8hgSxkF9W7" target="_blank">Comprar</a>
       </div>
     </div>
   </div>
 </section>
 
-  <footer id="contato">
-    <p>Entre em contato: <a href="mailto:hardspartan7@gmail.com">hardspartan7@gmail.com</a></p>
-  </footer>
-</body>
+  <footer>
+    <p © 2025 HardSpartan |  href="mailto:hardspartan7@gmail.com">Contato</a></p>
+</footer> 
+</body> 
 </html>
